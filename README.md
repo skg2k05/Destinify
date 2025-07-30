@@ -53,10 +53,6 @@ destinify/
 Works on all modern browsers that support:  
 - ES6 JavaScript  
 - HTML5 Canvas  
-- CSS3 animations  
-
-## License
-
-This project is open source and available under the MIT License.
-
+- CSS3 animations
+  
 **Happy decision making with Destinify! 🪙🎡**
