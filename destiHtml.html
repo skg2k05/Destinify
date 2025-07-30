@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Confirmer</title>
+    <link rel="stylesheet" href="decision-confirmer.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Decision Confirmer</h1>
+        
+        <!-- Step 1: Question Input -->
+        <div class="step" id="step1">
+            <h2>What's your doubt?</h2>
+            <textarea id="question" placeholder="Enter your question or doubt here..." rows="3"></textarea>
+            <button onclick="nextStep()" class="btn-primary">Next</button>
+        </div>
+
+        <!-- Step 2: Confirmer Type Selection -->
+        <div class="step" id="step2" style="display: none;">
+            <h2>Choose your confirmer type</h2>
+            <div class="confirmer-options">
+                <div class="option-card" onclick="selectConfirmerType('coin')">
+                    <div class="coin-preview">
+                        <div class="coin">🪙</div>
+                    </div>
+                    <h3>Coin Flip</h3>
+                    <p>Heads or Tails</p>
+                </div>
+                <div class="option-card" onclick="selectConfirmerType('wheel')">
+                    <div class="wheel-preview">
+                        <div class="wheel">🎡</div>
+                    </div>
+                    <h3>Wheel</h3>
+                    <p>12 parts: Yes/No alternating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Coin Flip Meaning (only for coin) -->
+        <div class="step" id="step3" style="display: none;">
+            <h2>What does Heads mean to you?</h2>
+            <div class="coin-meaning">
+                <div class="meaning-option">
+                    <label>
+                        <input type="radio" name="headsMeaning" value="yes" checked>
+                        <span class="radio-custom"></span>
+                        Heads = Yes
+                    </label>
+                </div>
+                <div class="meaning-option">
+                    <label>
+                        <input type="radio" name="headsMeaning" value="no">
+                        <span class="radio-custom"></span>
+                        Heads = No
+                    </label>
+                </div>
+            </div>
+            <button onclick="nextStep()" class="btn-primary">Next</button>
+        </div>
+
+        <!-- Step 4: Number of Confirms -->
+        <div class="step" id="step4" style="display: none;">
+            <h2>How many confirms do you want?</h2>
+            <div class="confirm-options">
+                <button class="btn-option" onclick="selectConfirms(1)">Single Confirm</button>
+                <button class="btn-option" onclick="selectConfirms(3)">Best of 3</button>
+                <button class="btn-option" onclick="selectConfirms(5)">Best of 5</button>
+                <div class="custom-confirms">
+                    <label for="customConfirms">Custom number:</label>
+                    <input type="number" id="customConfirms" min="1" max="10" value="3">
+                    <button onclick="selectCustomConfirms()" class="btn-secondary">Use Custom</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Results -->
+        <div class="step" id="step5" style="display: none;">
+            <h2>Your Question: <span id="displayQuestion"></span></h2>
+            
+            <div class="confirmer-display">
+                <!-- Coin Flip Display -->
+                <div id="coinDisplay" style="display: none;">
+                    <div class="coin-container">
+                        <div class="coin-flip" id="coinFlip">
+                            <div class="coin-face front">🪙</div>
+                            <div class="coin-face back">🪙</div>
+                        </div>
+                    </div>
+                    <div class="result-text" id="coinResult"></div>
+                </div>
+
+                <!-- Wheel Display -->
+                <div id="wheelDisplay" style="display: none;">
+                    <div class="wheel-container">
+                        <canvas id="wheelCanvas" width="300" height="300"></canvas>
+                        <div class="wheel-pointer"></div>
+                    </div>
+                    <div class="result-text" id="wheelResult"></div>
+                </div>
+            </div>
+
+            <div class="results-summary">
+                <h3>Results Summary</h3>
+                <div id="resultsList"></div>
+                <div class="final-result" id="finalResult"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="startConfirmation()" class="btn-primary" id="startBtn">Start Confirmation</button>
+                <button onclick="resetApp()" class="btn-secondary">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="decision-confirmer.js"></script>
+</body>
+</html> 
