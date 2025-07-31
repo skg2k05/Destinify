@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decision Confirmer</title>
-    <link rel="stylesheet" href="decision-confirmer.css">
+    <link rel="stylesheet" href="destiCss.css">
 </head>
 <body>
     <div class="container">
         <h1>🎯 Decision Confirmer</h1>
-        
-        <!-- Step 1: Question Input -->
         <div class="step" id="step1">
             <h2>What's your doubt?</h2>
             <textarea id="question" placeholder="Enter your question or doubt here..." rows="3"></textarea>
             <button onclick="nextStep()" class="btn-primary">Next</button>
         </div>
 
-        <!-- Step 2: Confirmer Type Selection -->
         <div class="step" id="step2" style="display: none;">
             <h2>Choose your confirmer type</h2>
             <div class="confirmer-options">
@@ -38,7 +35,6 @@
             </div>
         </div>
 
-        <!-- Step 3: Coin Flip Meaning (only for coin) -->
         <div class="step" id="step3" style="display: none;">
             <h2>What does Heads mean to you?</h2>
             <div class="coin-meaning">
@@ -60,7 +56,6 @@
             <button onclick="nextStep()" class="btn-primary">Next</button>
         </div>
 
-        <!-- Step 4: Number of Confirms -->
         <div class="step" id="step4" style="display: none;">
             <h2>How many confirms do you want?</h2>
             <div class="confirm-options">
@@ -75,12 +70,10 @@
             </div>
         </div>
 
-        <!-- Step 5: Results -->
         <div class="step" id="step5" style="display: none;">
             <h2>Your Question: <span id="displayQuestion"></span></h2>
             
             <div class="confirmer-display">
-                <!-- Coin Flip Display -->
                 <div id="coinDisplay" style="display: none;">
                     <div class="coin-container">
                         <div class="coin-flip" id="coinFlip">
@@ -114,6 +107,6 @@
         </div>
     </div>
 
-    <script src="decision-confirmer.js"></script>
+    <script src="destiJs.js"></script>
 </body>
 </html> 
